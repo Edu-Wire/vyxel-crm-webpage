@@ -44,6 +44,12 @@ export default function Navigation() {
       return
     }
 
+    if (item === 'Pricing') {
+      router.push('/pricing')
+      setMobileMenuOpen(false)
+      return
+    }
+
     const id = item.toLowerCase()
 
     if (typeof window !== 'undefined' && window.location.pathname === '/') {

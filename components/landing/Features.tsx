@@ -161,6 +161,7 @@ export default function Features() {
                   className="group relative h-full overflow-hidden rounded-[2.5rem] bg-white p-8 transition-all duration-700 hover:-translate-y-2 
                              border-2 border-slate-200/80 hover:border-[${colors.light}80]
                              shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_30px_60px_-15px_rgba(39,121,240,0.2)]"
+                  onClick={() => window.open('/features', '_self')}
                 >
                   {/* Subtle Gradient Hover Overlay */}
                   <div 
@@ -200,7 +201,7 @@ export default function Features() {
                       {feature.desc}
                     </p>
 
-                    <div className="mt-auto flex items-center font-bold text-sm transition-all duration-300 group-hover:gap-3" style={{ color: colors.primary }}>
+                    <div className="mt-auto flex items-center font-bold text-sm transition-all duration-300 group-hover:gap-3 cursor-pointer" style={{ color: colors.primary }}>
                       Explore feature 
                       <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </div>

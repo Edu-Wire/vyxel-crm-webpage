@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { motion, Variants } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { Mail, Phone, MessageSquare, Send, CheckCircle } from 'lucide-react'
+import { Mail, Phone, MapPin, CheckCircle, MessageSquare } from 'lucide-react'
 
 const colors = {
   primary: '#2779F0',
@@ -167,6 +167,26 @@ Message: ${formData.message}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <FormInput label="Phone Number" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} placeholder="+1 (555) 123-4567" />
                     <FormInput label="Company Name" name="company" value={formData.company} onChange={handleInputChange} placeholder="ABC Consultancy" />
+                  </div>
+
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="font-bold text-lg mb-4" style={{ color: colors.dark }}>Contact Information</h4>
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                          <Mail className="w-5 h-5 flex-shrink-0" style={{ color: colors.primary }} />
+                          <span style={{ color: colors.textSecondary }}>info@digi-wire.com</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <Phone className="w-5 h-5 flex-shrink-0" style={{ color: colors.primary }} />
+                          <span style={{ color: colors.textSecondary }}>+91 70672 08833</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <MapPin className="w-5 h-5 flex-shrink-0" style={{ color: colors.primary }} />
+                          <span style={{ color: colors.textSecondary }}>Bhopal, India</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                   <div>

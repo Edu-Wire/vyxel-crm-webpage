@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Linkedin, Github, Mail } from 'lucide-react'
+import { Mail, Phone, MapPin, Linkedin, Instagram, Facebook } from 'lucide-react'
 
 const colors = {
   primary: '#2779F0',
@@ -40,25 +40,31 @@ export default function Footer() {
             </p>
             <div className="flex gap-3">
               <a 
-                href="#" 
+                href="https://www.facebook.com/digiwireglobal" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 rounded-lg border transition-all duration-300 hover:scale-110 hover:bg-white/10"
+                style={{ borderColor: 'rgba(39, 121, 240, 0.2)', color: colors.textSecondary }}
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/digi-wire/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-lg border transition-all duration-300 hover:scale-110 hover:bg-white/10"
                 style={{ borderColor: 'rgba(39, 121, 240, 0.2)', color: colors.textSecondary }}
               >
                 <Linkedin className="w-4 h-4" />
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/digiwireglobal/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-lg border transition-all duration-300 hover:scale-110 hover:bg-white/10"
                 style={{ borderColor: 'rgba(39, 121, 240, 0.2)', color: colors.textSecondary }}
               >
-                <Github className="w-4 h-4" />
-              </a>
-              <a 
-                href="#" 
-                className="p-2 rounded-lg border transition-all duration-300 hover:scale-110 hover:bg-white/10"
-                style={{ borderColor: 'rgba(39, 121, 240, 0.2)', color: colors.textSecondary }}
-              >
-                <Mail className="w-4 h-4" />
+                <Instagram className="w-4 h-4" />
               </a>
             </div>
           </motion.div>

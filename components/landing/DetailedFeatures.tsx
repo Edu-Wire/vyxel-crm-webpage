@@ -18,12 +18,14 @@ import {
 } from 'lucide-react'
 
 const colors = {
-  primary: '#0D6493',
-  light: '#1E88C0',
-  accent: '#34D3E5',
+  primary: '#2779F0',
+  secondary: '#2AA8F3',
+  accent: '#4DDCE2',
+  light: '#B0E2F6',
+  white: '#FDFDFD',
   dark: '#111827',
   textSecondary: '#4B5563',
-  bgSection: '#F8FAFC',
+  bgSection: '#FDFDFD',
 }
 
 const featureCategories = [
@@ -197,7 +199,7 @@ export default function DetailedFeatures() {
                     <div
                       className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg"
                       style={{
-                        background: `linear-gradient(135deg, ${colors.primary}, ${colors.light})`,
+                        background: `linear-gradient(135deg, ${colors.primary}, ${colors.secondary})`,
                         color: 'white',
                       }}
                     >
@@ -274,7 +276,7 @@ export default function DetailedFeatures() {
             initial="hidden"
             whileInView="visible"
             className="p-12 rounded-[3rem] text-white shadow-2xl flex flex-col justify-between"
-            style={{ background: `linear-gradient(135deg, ${colors.primary}, ${colors.light})` }}
+            style={{ background: `linear-gradient(135deg, ${colors.primary}, ${colors.secondary})` }}
           >
             <div className="flex justify-between items-start">
               <ShieldCheck className="w-12 h-12" />

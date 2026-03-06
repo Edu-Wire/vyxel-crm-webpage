@@ -15,13 +15,15 @@ import {
 } from 'lucide-react'
 
 const colors = {
-  primary: '#0D6493',
-  light: '#1E88C0',
-  accent: '#34D3E5',
+  primary: '#2779F0',
+  secondary: '#2AA8F3',
+  accent: '#4DDCE2',
+  light: '#B0E2F6',
+  white: '#FDFDFD',
   dark: '#111827',
   textSecondary: '#4B5563',
-  bgSection: '#F8FAFC', // Off-white section background
-  cardBorder: '#E2E8F0', // Distinct border color
+  bgSection: '#FDFDFD',
+  cardBorder: '#B0E2F640',
 }
 
 interface Feature {
@@ -157,8 +159,8 @@ export default function Features() {
               >
                 <div 
                   className="group relative h-full overflow-hidden rounded-[2.5rem] bg-white p-8 transition-all duration-700 hover:-translate-y-2 
-                             border-2 border-slate-200/80 hover:border-[rgba(13,100,147,0.3)]
-                             shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_30px_60px_-15px_rgba(13,100,147,0.2)]"
+                             border-2 border-slate-200/80 hover:border-[${colors.light}80]
+                             shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_30px_60px_-15px_rgba(39,121,240,0.2)]"
                 >
                   {/* Subtle Gradient Hover Overlay */}
                   <div 
@@ -171,7 +173,7 @@ export default function Features() {
                     <div 
                       className="w-14 h-14 flex items-center justify-center rounded-2xl mb-8 transition-all duration-500 group-hover:scale-110 border-2 border-transparent group-hover:border-white/20 shadow-lg"
                       style={{ 
-                        background: `linear-gradient(135deg, ${colors.primary}, ${colors.light})`,
+                        background: `linear-gradient(135deg, ${colors.primary}, ${colors.secondary})`, 
                         color: 'white' 
                       }}
                     >
@@ -187,7 +189,7 @@ export default function Features() {
                         style={{ 
                           background: `${colors.primary}08`, 
                           color: colors.primary,
-                          borderColor: `${colors.primary}15`
+                          borderColor: `${colors.primary}20`
                         }}
                       >
                         {feature.highlight}

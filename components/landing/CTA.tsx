@@ -5,9 +5,11 @@ import { motion } from 'framer-motion'
 import { ArrowRight, PlayCircle } from 'lucide-react'
 
 const colors = {
-  primary: '#0D6493',
-  light: '#1E88C0',
-  accent: '#34D3E5',
+  primary: '#2779F0',
+  secondary: '#2AA8F3',
+  accent: '#4DDCE2',
+  light: '#B0E2F6',
+  white: '#FDFDFD',
   dark: '#111827',
   textSecondary: '#4B5563',
 }
@@ -21,13 +23,13 @@ export default function CTA() {
           animate={{ rotate: 360 }}
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
           className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-500/10 to-blue-600/10 rounded-full blur-3xl"
-          style={{ background: `radial-gradient(circle, ${colors.primary}15, ${colors.light}10)` }}
+          style={{ background: `radial-gradient(circle, ${colors.primary}15, ${colors.secondary}10)` }}
         />
         <motion.div
           animate={{ rotate: -360 }}
           transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
           className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-500/10 to-blue-600/10 rounded-full blur-3xl"
-          style={{ background: `radial-gradient(circle, ${colors.light}15, ${colors.primary}10)` }}
+          style={{ background: `radial-gradient(circle, ${colors.secondary}15, ${colors.primary}10)` }}
         />
       </div>
 
@@ -65,7 +67,7 @@ export default function CTA() {
         >
           <Button 
             className="group h-14 px-10 rounded-xl font-semibold text-white shadow-xl hover:shadow-2xl transition-all duration-300"
-            style={{ background: `linear-gradient(to right, ${colors.primary}, ${colors.light})` }}
+            style={{ background: `linear-gradient(to right, ${colors.primary}, ${colors.secondary})` }}
           >
             Book a Free Demo
             <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />

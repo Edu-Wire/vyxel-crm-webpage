@@ -7,9 +7,11 @@ import { motion, Variants } from 'framer-motion'
 import { CheckCircle2, Crown } from 'lucide-react'
 
 const colors = {
-  primary: '#0D6493',
-  light: '#1E88C0',
-  accent: '#34D3E5',
+  primary: '#2779F0',
+  secondary: '#2AA8F3',
+  accent: '#4DDCE2',
+  light: '#B0E2F6',
+  white: '#FDFDFD',
   dark: '#111827',
   textSecondary: '#4B5563',
 }
@@ -152,7 +154,7 @@ export default function Pricing() {
                 {plan.featured && (
                   <div
                     className="absolute top-0 right-0 px-4 py-1.5 rounded-bl-2xl text-[10px] font-bold uppercase tracking-widest text-white shadow-lg"
-                    style={{ background: `linear-gradient(to right, ${colors.primary}, ${colors.light})` }}
+                    style={{ background: `linear-gradient(to right, ${colors.primary}, ${colors.secondary})` }}
                   >
                     Most Popular
                   </div>
@@ -187,7 +189,7 @@ export default function Pricing() {
                         : 'border-2 hover:bg-slate-50'
                     }`}
                     style={plan.featured ? { 
-                      background: `linear-gradient(135deg, ${colors.primary}, ${colors.light})`,
+                      background: `linear-gradient(135deg, ${colors.primary}, ${colors.secondary})`,
                       border: 'none'
                     } : { 
                       borderColor: `${colors.primary}30`, 

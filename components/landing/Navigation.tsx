@@ -91,7 +91,7 @@ export default function Navigation() {
             
             <Button 
               className="px-6 rounded-full text-xs font-semibold h-9 shadow-sm transition-all hover:shadow-md hover:brightness-110 active:scale-95"
-              style={{ backgroundColor: '#0D6493', color: '#FFFFFF' }}
+              style={{ backgroundColor: '#2779F0', color: '#FFFFFF' }}
             >
               Book Demo
             </Button>
@@ -128,7 +128,7 @@ export default function Navigation() {
                 <div className="pt-3">
                   <Button 
                     className="w-full h-12 rounded-full text-sm font-semibold"
-                    style={{ backgroundColor: '#1E88C0', color: '#FFFFFF' }}
+                    style={{ backgroundColor: '#2779F0', color: '#FFFFFF' }}
                   >
                     Book Demo
                   </Button>

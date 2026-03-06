@@ -5,9 +5,11 @@ import { motion, Variants } from 'framer-motion'
 import { Target, Users, TrendingUp, Shield, Star, LucideIcon } from 'lucide-react'
 
 const colors = {
-  primary: '#0D6493',
-  light: '#1E88C0',
-  accent: '#34D3E5',
+  primary: '#2779F0',
+  secondary: '#2AA8F3',
+  accent: '#4DDCE2',
+  light: '#B0E2F6',
+  white: '#FDFDFD',
   dark: '#111827',
   textSecondary: '#4B5563',
 }
@@ -132,7 +134,7 @@ export default function Benefits() {
                     {/* Icon Container */}
                     <div 
                       className="mb-8 inline-flex items-center justify-center w-16 h-16 rounded-2xl transition-transform duration-500 group-hover:scale-110 shadow-sm"
-                      style={{ background: `linear-gradient(135deg, ${colors.primary}, ${colors.light})`, color: 'white' }}
+                      style={{ background: `linear-gradient(135deg, ${colors.primary}, ${colors.secondary})`, color: 'white' }}
                     >
                       <Icon className="w-8 h-8" />
                     </div>

@@ -18,9 +18,11 @@ import {
 import { TrendingUp, BarChart3 } from 'lucide-react'
 
 const colors = {
-  primary: '#0D6493',
-  light: '#1E88C0',
-  accent: '#34D3E5',
+  primary: '#2779F0',
+  secondary: '#2AA8F3',
+  accent: '#4DDCE2',
+  light: '#B0E2F6',
+  white: '#FDFDFD',
   dark: '#111827',
   textSecondary: '#4B5563',
 }
@@ -102,18 +104,21 @@ export default function Analytics() {
           </motion.p>
         </div>
 
-        {/* Analytics Preview Placeholder (using a stylized div for now) */}
+        {/* Analytics Dashboard Preview */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-16"
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-20"
         >
-          <Card className="relative overflow-hidden border-0 shadow-2xl rounded-3xl aspect-[16/9] md:aspect-[21/9] bg-slate-100 flex items-center justify-center">
-             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent" />
-             <BarChart3 className="w-20 h-20 opacity-10" style={{ color: colors.primary }} />
-             <p className="absolute bottom-8 text-sm font-medium opacity-40">Dashboard Interface Preview</p>
-          </Card>
+          <div className="relative overflow-hidden border-0 shadow-2xl rounded-3xl bg-slate-100 inline-block">
+            <img 
+              src="/ss.png" 
+              alt="Dashboard Interface Preview" 
+              className="block rounded-3xl"
+              style={{ maxWidth: '100%', height: 'auto' }}
+            />
+          </div>
         </motion.div>
 
         {/* Charts Grid */}
@@ -136,7 +141,7 @@ export default function Analytics() {
                 <div className="flex items-center gap-3 mb-8">
                   <div 
                     className="p-2 rounded-lg transition-transform duration-500 group-hover:scale-110"
-                    style={{ background: `linear-gradient(135deg, ${colors.primary}, ${colors.light})`, color: 'white' }}
+                    style={{ background: `linear-gradient(135deg, ${colors.primary}, ${colors.secondary})`, color: 'white' }}
                   >
                     <TrendingUp className="w-5 h-5" />
                   </div>
@@ -207,7 +212,7 @@ export default function Analytics() {
                 <div className="flex items-center gap-3 mb-8">
                   <div 
                     className="p-2 rounded-lg transition-transform duration-500 group-hover:scale-110"
-                    style={{ background: `linear-gradient(135deg, ${colors.primary}, ${colors.light})`, color: 'white' }}
+                    style={{ background: `linear-gradient(135deg, ${colors.primary}, ${colors.secondary})`, color: 'white' }}
                   >
                     <BarChart3 className="w-5 h-5" />
                   </div>

@@ -3,9 +3,11 @@ import { Button } from '@/components/ui/button'
 import { PlayCircle } from 'lucide-react'
 
 const colors = {
-  primary: '#0D6493',
-  light: '#1E88C0',
-  accent: '#34D3E5',
+  primary: '#2779F0',
+  secondary: '#2AA8F3',
+  accent: '#4DDCE2',
+  light: '#B0E2F6',
+  white: '#FDFDFD',
   dark: '#111827',
   textSecondary: '#4B5563',
 }
@@ -13,7 +15,7 @@ const colors = {
 export default function Hero() {
   return (
     <section className="relative min-h-[85vh] flex flex-col items-center justify-center bg-white px-6">
-      <div className="max-w-4xl mx-auto text-center space-y-8 mt-28">
+      <div className="max-w-4xl mx-auto text-center space-y-8 mt-30">
         
         {/* Subtle Badge */}
         <motion.div
@@ -34,7 +36,7 @@ export default function Hero() {
           style={{ color: colors.dark }}
         >
           The <span className="font-bold bg-gradient-to-r bg-clip-text text-transparent " style={{ backgroundImage: `linear-gradient(to right, ${colors.primary}, ${colors.accent})` }}>CRM</span> foundation <br />
-          <span style={{ color: colors.light }}>built for growth.</span>
+          <span style={{ color: colors.secondary }}>built for growth.</span>
         </motion.h1>
 
         {/* Clean, wide paragraph */}
@@ -58,7 +60,7 @@ export default function Hero() {
           <Button 
             variant="outline"
             className="w-full sm:w-auto h-14 px-8 text-base font-medium rounded-xl border-slate-200 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 group"
-            style={{ color: colors.dark, borderColor: '#E2E8F0' }}
+            style={{ color: colors.dark, borderColor: '#B0E2F640' }}
           >
             <PlayCircle className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-all duration-300" style={{ color: 'currentColor' }} />
             <span className="transition-colors duration-300" style={{ color: 'currentColor' }}>See How It Works</span>
@@ -66,7 +68,7 @@ export default function Hero() {
           
           <Button 
             className="w-full sm:w-auto h-14 px-8 text-base font-medium rounded-xl shadow-lg hover:shadow-xl transition-all"
-            style={{ backgroundColor: colors.dark, color: '#fff' }}
+            style={{ backgroundColor: colors.primary, color: '#fff' }}
           >
             Get Started for Free
           </Button>

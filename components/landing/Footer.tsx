@@ -4,12 +4,14 @@ import { motion } from 'framer-motion'
 import { Linkedin, Github, Mail } from 'lucide-react'
 
 const colors = {
-  primary: '#0D6493',
-  light: '#1E88C0',
-  accent: '#34D3E5',
-  darkText: '#FFFFFF',
-  textSecondary: '#94A3B8',
-  footerBg: '#0F172A',
+  primary: '#2779F0',
+  secondary: '#2AA8F3',
+  accent: '#4DDCE2',
+  light: '#B0E2F6',
+  white: '#FDFDFD',
+  darkText: '#111827',
+  textSecondary: '#4B5563',
+  footerBg: '#e0e0e0',
 }
 
 export default function Footer() {
@@ -40,21 +42,21 @@ export default function Footer() {
               <a 
                 href="#" 
                 className="p-2 rounded-lg border transition-all duration-300 hover:scale-110 hover:bg-white/10"
-                style={{ borderColor: 'rgba(255,255,255,0.1)', color: colors.textSecondary }}
+                style={{ borderColor: 'rgba(39, 121, 240, 0.2)', color: colors.textSecondary }}
               >
                 <Linkedin className="w-4 h-4" />
               </a>
               <a 
                 href="#" 
                 className="p-2 rounded-lg border transition-all duration-300 hover:scale-110 hover:bg-white/10"
-                style={{ borderColor: 'rgba(255,255,255,0.1)', color: colors.textSecondary }}
+                style={{ borderColor: 'rgba(39, 121, 240, 0.2)', color: colors.textSecondary }}
               >
                 <Github className="w-4 h-4" />
               </a>
               <a 
                 href="#" 
                 className="p-2 rounded-lg border transition-all duration-300 hover:scale-110 hover:bg-white/10"
-                style={{ borderColor: 'rgba(255,255,255,0.1)', color: colors.textSecondary }}
+                style={{ borderColor: 'rgba(39, 121, 240, 0.2)', color: colors.textSecondary }}
               >
                 <Mail className="w-4 h-4" />
               </a>
@@ -162,7 +164,7 @@ export default function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="pt-8 border-t"
-          style={{ borderColor: `${colors.primary}10` }}
+          style={{ borderColor: 'rgba(39, 121, 240, 0.15)' }}
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm" style={{ color: colors.textSecondary }}>

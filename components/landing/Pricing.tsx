@@ -197,6 +197,7 @@ export default function Pricing() {
                       backgroundColor: 'transparent' 
                     }}
                     variant={plan.featured ? 'default' : 'outline'}
+                    onClick={() => window.open('/inquiry', '_self')}
                   >
                     Get Started
                   </Button>

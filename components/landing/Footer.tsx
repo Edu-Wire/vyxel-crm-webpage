@@ -21,7 +21,7 @@ export default function Footer() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
       <div className="relative max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-12 mb-16">
+        <div className="grid md:grid-cols-3 gap-12 mb-16">
           {/* Brand Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -74,55 +74,17 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               <li>
-                <a href="#features" className="text-sm transition-colors duration-300 hover:opacity-80" style={{ color: colors.textSecondary }}>
+                <a href="/features" className="text-sm transition-colors duration-300 hover:opacity-80" style={{ color: colors.textSecondary }}>
                   Features
                 </a>
               </li>
               <li>
-                <a href="#pricing" className="text-sm transition-colors duration-300 hover:opacity-80" style={{ color: colors.textSecondary }}>
+                <a href="/pricing" className="text-sm transition-colors duration-300 hover:opacity-80" style={{ color: colors.textSecondary }}>
                   Pricing
                 </a>
               </li>
               <li>
-                <a href="#analytics" className="text-sm transition-colors duration-300 hover:opacity-80" style={{ color: colors.textSecondary }}>
-                  Analytics
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm transition-colors duration-300 hover:opacity-80" style={{ color: colors.textSecondary }}>
-                  Security
-                </a>
-              </li>
-            </ul>
-          </motion.div>
-
-          {/* Company Column */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <h4 className="font-bold text-sm uppercase tracking-wider mb-6" style={{ color: colors.darkText }}>
-              Company
-            </h4>
-            <ul className="space-y-4">
-              <li>
-                <a href="#" className="text-sm transition-colors duration-300 hover:opacity-80" style={{ color: colors.textSecondary }}>
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm transition-colors duration-300 hover:opacity-80" style={{ color: colors.textSecondary }}>
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm transition-colors duration-300 hover:opacity-80" style={{ color: colors.textSecondary }}>
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-sm transition-colors duration-300 hover:opacity-80" style={{ color: colors.textSecondary }}>
+                <a href="/inquiry" className="text-sm transition-colors duration-300 hover:opacity-80" style={{ color: colors.textSecondary }}>
                   Contact
                 </a>
               </li>
@@ -140,18 +102,18 @@ export default function Footer() {
             </h4>
             <ul className="space-y-4">
               <li>
-                <a href="#" className="text-sm transition-colors duration-300 hover:opacity-80" style={{ color: colors.textSecondary }}>
+                <a href="/privacy" className="text-sm transition-colors duration-300 hover:opacity-80" style={{ color: colors.textSecondary }}>
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm transition-colors duration-300 hover:opacity-80" style={{ color: colors.textSecondary }}>
+                <a href="/terms" className="text-sm transition-colors duration-300 hover:opacity-80" style={{ color: colors.textSecondary }}>
                   Terms of Service
                 </a>
               </li>
               <li>
-                <a href="#" className="text-sm transition-colors duration-300 hover:opacity-80" style={{ color: colors.textSecondary }}>
-                  Cookie Policy
+                <a href="/refund" className="text-sm transition-colors duration-300 hover:opacity-80" style={{ color: colors.textSecondary }}>
+                  Refund Policy
                 </a>
               </li>
             </ul>

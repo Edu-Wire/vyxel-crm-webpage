@@ -68,6 +68,7 @@ export default function CTA() {
           <Button 
             className="group h-14 px-10 rounded-xl font-semibold text-white shadow-xl hover:shadow-2xl transition-all duration-300"
             style={{ background: `linear-gradient(to right, ${colors.primary}, ${colors.secondary})` }}
+            onClick={() => window.open('/inquiry', '_self')}
           >
             Book a Free Demo
             <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />

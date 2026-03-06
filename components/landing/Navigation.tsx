@@ -69,12 +69,17 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-6">
           
           {/* --- LOGO --- */}
-          <div className="flex items-center gap-2.5 group cursor-pointer">
-            <img 
-              src="/vyxel_logo.png" 
-              alt="Vyxel" 
-              className="h-10 w-auto transition-all duration-300 group-hover:scale-105"
-            />
+          <div className="flex items-center gap-2.5 group">
+            <button 
+              onClick={() => router.push('/')}
+              className="flex items-center gap-2.5 group cursor-pointer"
+            >
+              <img 
+                src="/vyxel_logo.png" 
+                alt="Vyxel" 
+                className="h-10 w-auto transition-all duration-300 group-hover:scale-105"
+              />
+            </button>
           </div>
 
           {/* --- DESKTOP NAV --- */}
@@ -83,7 +88,7 @@ export default function Navigation() {
               <button
                 key={item}
                 onClick={() => handleNavClick(item as 'Features' | 'Pricing' | 'FAQ')}
-                className="text-xs font-medium text-[#1A202C]/60 hover:text-[#1A202C] transition-colors tracking-wide"
+                className="text-xs font-medium text-[#1A202C]/60 hover:text-[#1A202C] transition-colors tracking-wide cursor-pointer"
               >
                 {item}
               </button>
@@ -92,6 +97,7 @@ export default function Navigation() {
             <Button 
               className="px-6 rounded-full text-xs font-semibold h-9 shadow-sm transition-all hover:shadow-md hover:brightness-110 active:scale-95"
               style={{ backgroundColor: '#2779F0', color: '#FFFFFF' }}
+              onClick={() => window.open('/inquiry', '_self')}
             >
               Book Demo
             </Button>
@@ -99,7 +105,7 @@ export default function Navigation() {
 
           {/* --- MOBILE TOGGLE --- */}
           <button
-            className="md:hidden p-2 text-[#1A202C] opacity-70 hover:opacity-100"
+            className="md:hidden p-2 text-[#1A202C] opacity-70 hover:opacity-100 cursor-pointer"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -120,7 +126,7 @@ export default function Navigation() {
                   <button
                     key={item}
                     onClick={() => handleNavClick(item as 'Features' | 'Pricing' | 'FAQ')}
-                    className="px-6 py-3.5 rounded-full text-sm font-medium text-[#1A202C]/70 hover:bg-black/5 hover:text-[#1A202C]"
+                    className="px-6 py-3.5 rounded-full text-sm font-medium text-[#1A202C]/70 hover:bg-black/5 hover:text-[#1A202C] cursor-pointer"
                   >
                     {item}
                   </button>
@@ -129,6 +135,7 @@ export default function Navigation() {
                   <Button 
                     className="w-full h-12 rounded-full text-sm font-semibold"
                     style={{ backgroundColor: '#2779F0', color: '#FFFFFF' }}
+                    onClick={() => window.open('/inquiry', '_self')}
                   >
                     Book Demo
                   </Button>

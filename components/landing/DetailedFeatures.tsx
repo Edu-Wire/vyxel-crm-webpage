@@ -175,7 +175,7 @@ export default function DetailedFeatures() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-semibold tracking-tighter mt-4 mb-8"
+            className="text-5xl md:text-7xl font-[420] tracking-tighter mt-4 mb-8"
             style={{ color: colors.dark }}
           >
             Everything you need <br /> to scale your consultancy.
@@ -205,7 +205,7 @@ export default function DetailedFeatures() {
                     >
                       <Icon className="w-8 h-8" />
                     </div>
-                    <h3 className="text-3xl font-bold tracking-tight mb-4" style={{ color: colors.dark }}>
+                    <h3 className="text-3xl font-semibold tracking-tight mb-4" style={{ color: colors.dark }}>
                       {category.title}
                     </h3>
                     <span

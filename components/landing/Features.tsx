@@ -221,23 +221,7 @@ export default function Features() {
         </motion.div>
 
         {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-16 flex justify-center"
-        >
-          <button 
-            className="group flex items-center gap-4 px-10 py-5 rounded-full font-bold transition-all bg-white border-2 border-slate-200 shadow-md hover:shadow-2xl hover:border-[rgba(13,100,147,0.3)] hover:-translate-y-1"
-            style={{ color: colors.dark }}
-          >
-            Full Product Tour
-            <div className="w-8 h-8 rounded-full flex items-center justify-center transition-all group-hover:scale-110" style={{ background: colors.primary, color: 'white' }}>
-              <ArrowRight className="w-4 h-4" />
-            </div>
-          </button>
-        </motion.div>
-        <p className="text-xs font-bold uppercase tracking-[0.2em] opacity-40">No credit card required</p>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] opacity-40">No credit card required</p>
       </div>
     </section>
   )

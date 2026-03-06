@@ -9,25 +9,17 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 const _montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
+  title: 'Vyxel - AI-Powered Student Relationship Management',
+  description: 'Transform your study abroad consultancy with Vyxel - AI-powered lead management, student tracking, and workflow automation.',
+  generator: 'Vyxel',
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/v.png',
+        type: 'image/png',
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/v.png',
   },
 }
 

@@ -287,11 +287,12 @@ export default function DetailedFeatures() {
             </div>
             <div>
               <h4 className="text-3xl font-bold mb-4">Ready to optimize?</h4>
-              <button
+              <button 
                 className="flex items-center gap-2 px-8 py-4 bg-white rounded-2xl font-bold text-sm transition-transform hover:scale-105"
                 style={{ color: colors.primary }}
+                onClick={() => window.open('/inquiry', '_self')}
               >
-                Schedule Onboarding <ArrowRight className="w-4 h-4" />
+                Schedule Demo <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </motion.div>

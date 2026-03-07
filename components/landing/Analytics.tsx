@@ -272,7 +272,7 @@ export default function Analytics() {
             className="group flex items-center gap-2 font-bold transition-all"
             style={{ color: colors.primary }}
           >
-            View Full Dashboard 
+            Get Started 
             <span className="transition-transform group-hover:translate-x-2">→</span>
           </button>
         </motion.div>

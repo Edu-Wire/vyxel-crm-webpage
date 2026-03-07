@@ -121,7 +121,7 @@ export default function PricingPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-20"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-tight" style={{ color: colors.dark }}>
+            <h1 className="text-5xl md:text-6xl font-[420] mb-6 tracking-tight" style={{ color: colors.dark }}>
               Simple, Transparent Pricing
             </h1>
             <p className="text-xl max-w-3xl mx-auto" style={{ color: colors.textSecondary }}>
@@ -245,6 +245,11 @@ export default function PricingPage() {
             <p className="text-lg mb-8 max-w-2xl mx-auto" style={{ color: colors.textSecondary }}>
               We offer tailored solutions for large-scale enterprise clients. Let's build something specific to your workflow.
             </p>
+            <div className="text-center mb-4">
+              <p className="text-sm" style={{ color: colors.textSecondary }}>
+                Call us: <span className="font-semibold">+91 70672 08833</span>
+              </p>
+            </div>
             <button 
               onClick={() => window.location.href = '/inquiry'}
               className="px-10 py-4 rounded-2xl font-bold text-white shadow-xl hover:shadow-2xl transition-all"

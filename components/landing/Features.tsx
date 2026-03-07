@@ -23,7 +23,6 @@ const colors = {
   dark: '#111827',
   textSecondary: '#4B5563',
   bgSection: '#FDFDFD',
-  cardBorder: '#B0E2F640',
 }
 
 interface Feature {
@@ -81,25 +80,18 @@ const containerVariants: Variants = {
 }
 
 const itemVariants: Variants = {
-  hidden: { 
-    y: 40, 
-    opacity: 0,
-    filter: 'blur(8px)' 
-  },
+  hidden: { y: 40, opacity: 0, filter: 'blur(8px)' },
   visible: {
     y: 0,
     opacity: 1,
     filter: 'blur(0px)',
-    transition: { 
-      duration: 1, 
-      ease: [0.16, 1, 0.3, 1] 
-    },
+    transition: { duration: 1, ease: [0.16, 1, 0.3, 1] },
   },
 }
 
 export default function Features() {
   return (
-    <section className="relative py-24 overflow-hidden" style={{ backgroundColor: colors.bgSection }} id="features" suppressHydrationWarning>
+    <section className="relative py-24 overflow-hidden" style={{ backgroundColor: colors.bgSection }} id="features">
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0D649308_1px,transparent_1px),linear-gradient(to_bottom,#0D649308_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
 
@@ -118,6 +110,7 @@ export default function Features() {
               Features
             </span>
           </motion.div>
+          
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -126,6 +119,7 @@ export default function Features() {
           >
             Built for the next generation of admissions.
           </motion.h2>
+          
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -143,24 +137,25 @@ export default function Features() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-6 gap-6"
         >
           {features.map((feature, i) => {
             const Icon = feature.icon;
-            
-            // Staggered logic: Row 1 (L-S), Row 2 (S-L), Row 3 (L-S)
-            const isLarge = Math.floor(i / 2) % 2 === 0 ? i % 2 === 0 : i % 2 !== 0;
+            // Logical spans for a nice Bento layout: [4, 2], [2, 4], [3, 3]
+            const spans = ["md:col-span-4", "md:col-span-2", "md:col-span-2", "md:col-span-4", "md:col-span-3", "md:col-span-3"];
+            const isLarge = spans[i].includes('col-span-4') || spans[i].includes('col-span-3');
 
             return (
               <motion.div 
                 key={i} 
                 variants={itemVariants}
-                className={`${isLarge ? 'md:col-span-2' : 'md:col-span-1'}`}
+                className={spans[i]}
               >
                 <div 
                   className="group relative h-full overflow-hidden rounded-[2.5rem] bg-white p-8 transition-all duration-700 hover:-translate-y-2 
-                             border-2 border-slate-200/80 hover:border-[${colors.light}80]
-                             shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_30px_60px_-15px_rgba(39,121,240,0.2)]"
+                             border-2 border-slate-200/80 shadow-[0_8px_30px_rgb(0,0,0,0.04)] 
+                             hover:shadow-[0_30px_60px_-15px_rgba(39,121,240,0.2)] cursor-pointer"
+                  style={{ '--hover-border': `${colors.light}80` } as React.CSSProperties}
                   onClick={() => window.open('/features', '_self')}
                 >
                   {/* Subtle Gradient Hover Overlay */}
@@ -170,9 +165,9 @@ export default function Features() {
                   />
 
                   <div className="relative z-10 flex flex-col h-full">
-                    {/* Icon Container with Border */}
+                    {/* Icon Container */}
                     <div 
-                      className="w-14 h-14 flex items-center justify-center rounded-2xl mb-8 transition-all duration-500 group-hover:scale-110 border-2 border-transparent group-hover:border-white/20 shadow-lg"
+                      className="w-14 h-14 flex items-center justify-center rounded-2xl mb-8 transition-all duration-500 group-hover:scale-110 shadow-lg"
                       style={{ 
                         background: `linear-gradient(135deg, ${colors.primary}, ${colors.secondary})`, 
                         color: 'white' 
@@ -186,31 +181,28 @@ export default function Features() {
                         {feature.title}
                       </h3>
                       <span 
-                        className="text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border-2"
+                        className="text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider border"
                         style={{ 
                           background: `${colors.primary}08`, 
                           color: colors.primary,
-                          borderColor: `${colors.primary}20`
+                          borderColor: `${colors.primary}30`
                         }}
                       >
                         {feature.highlight}
                       </span>
                     </div>
                     
-                    <p className="text-base leading-relaxed mb-10 max-w-[550px]" style={{ color: colors.textSecondary }}>
+                    <p className="text-base leading-relaxed mb-10 max-w-[500px]" style={{ color: colors.textSecondary }}>
                       {feature.desc}
                     </p>
 
-                    <div className="mt-auto flex items-center font-bold text-sm transition-all duration-300 group-hover:gap-3 cursor-pointer" style={{ color: colors.primary }}>
-                      Explore feature 
-                      <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </div>
+                    
                   </div>
 
-                  {/* Aesthetic Background Shape for Large Cards */}
+                  {/* Decorative shape for larger cards */}
                   {isLarge && (
                     <div 
-                      className="absolute -right-20 -top-20 w-80 h-80 rounded-full opacity-[0.03] group-hover:opacity-[0.1] transition-all duration-1000 pointer-events-none blur-3xl"
+                      className="absolute -right-20 -top-20 w-80 h-80 rounded-full opacity-[0.03] group-hover:opacity-[0.08] transition-all duration-1000 pointer-events-none blur-3xl"
                       style={{ backgroundColor: colors.primary }}
                     />
                   )}
@@ -219,9 +211,6 @@ export default function Features() {
             );
           })}
         </motion.div>
-
-        {/* CTA Section */}
-                <p className="text-xs font-bold uppercase tracking-[0.2em] opacity-40">No credit card required</p>
       </div>
     </section>
   )

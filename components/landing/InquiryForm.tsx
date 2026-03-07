@@ -122,7 +122,7 @@ Message: ${formData.message}
             Get In Touch
           </motion.span>
           <motion.h2
-            className="text-4xl md:text-5xl font-semibold tracking-tight mt-4 mb-6"
+            className="text-4xl md:text-5xl font-[420] tracking-tight mt-4 mb-6"
             style={{ color: colors.dark }}
           >
             Ready to transform your consultancy?
@@ -148,8 +148,8 @@ Message: ${formData.message}
                 <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
                 <div className="space-y-6">
                   <ContactItem icon={<Mail />} title="Email" content="info@digi-wire.com" />
-                  <ContactItem icon={<Phone />} title="Phone" content="+1 (555) 123-4567" />
-                  <ContactItem icon={<MessageSquare />} title="Live Chat" content="Mon-Fri, 9AM-6PM EST" />
+                  <ContactItem icon={<Phone />} title="Phone" content="+91 70672 08833" />
+                  <ContactItem icon={<MessageSquare />} title="Live Chat" content="Mon-Fri, 9AM-6PM IST" />
                 </div>
             </div>
           </motion.div>
@@ -167,41 +167,6 @@ Message: ${formData.message}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <FormInput label="Phone Number" name="phone" type="tel" value={formData.phone} onChange={handleInputChange} placeholder="+1 (555) 123-4567" />
                     <FormInput label="Company Name" name="company" value={formData.company} onChange={handleInputChange} placeholder="ABC Consultancy" />
-                  </div>
-
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="font-bold text-lg mb-4" style={{ color: colors.dark }}>Contact Information</h4>
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-3">
-                          <Mail className="w-5 h-5 flex-shrink-0" style={{ color: colors.primary }} />
-                          <span style={{ color: colors.textSecondary }}>info@digi-wire.com</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <Phone className="w-5 h-5 flex-shrink-0" style={{ color: colors.primary }} />
-                          <span style={{ color: colors.textSecondary }}>+91 70672 08833</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                          <MapPin className="w-5 h-5 flex-shrink-0" style={{ color: colors.primary }} />
-                          <span style={{ color: colors.textSecondary }}>Bhopal, India</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold mb-2" style={{ color: colors.dark }}>Service Interest</label>
-                    <select
-                      name="service"
-                      value={formData.service}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-lg border transition-all focus:outline-none focus:ring-2"
-                      style={{ borderColor: `${colors.light}40`, backgroundColor: colors.white }}
-                    >
-                      <option value="">Select a service</option>
-                      <option value="lead-management">Lead Management System</option>
-                      <option value="full-suite">Complete CRM Suite</option>
-                    </select>
                   </div>
 
                   <div>

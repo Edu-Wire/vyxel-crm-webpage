@@ -76,12 +76,12 @@ export default function Hero() {
 
         {/* Minimalist Footnote */}
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
           className="text-[11px] text-slate-400 font-medium uppercase tracking-[0.2em] pt-12"
         >
-          No credit card required • Trusted by 500+ Consultancies
+          Trusted by 500+ Consultancies
         </motion.p>
       </div>
 
@@ -93,7 +93,7 @@ export default function Hero() {
         className="max-w-6xl mx-auto mt-16 px-6"
       >
         <img 
-          src="/mockup.png" 
+          src="/blobs.png" 
           alt="Vyxel CRM Dashboard Mockup" 
           className="w-full h-auto"
         />

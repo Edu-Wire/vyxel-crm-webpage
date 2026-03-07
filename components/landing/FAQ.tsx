@@ -42,8 +42,7 @@ const faqs = [
   },
   {
     question: 'Do you offer a free trial?',
-    answer:
-      'Yes! We offer a 14-day free trial of all features with no credit card required. Book a demo if you want a personalized walkthrough.',
+    answer: 'Yes! We offer a 14-day free trial of all features. Book a demo if you want a personalized walkthrough.',
   },
 ]
 

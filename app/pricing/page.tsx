@@ -4,7 +4,7 @@ import React from 'react'
 import Navigation from '@/components/landing/Navigation'
 import Footer from '@/components/landing/Footer'
 import { motion, Variants } from 'framer-motion'
-import { Check, ArrowRight, Star, Minus } from 'lucide-react'
+import { Check, ArrowRight, Star, Minus, CheckCircle } from 'lucide-react'
 
 const colors = {
   primary: '#2779F0',
@@ -100,7 +100,7 @@ export default function PricingPage() {
   const renderTableCell = (val: string | boolean) => {
     if (typeof val === 'boolean') {
       return val ? (
-        <Check className="w-5 h-5 mx-auto" style={{ color: colors.primary }} />
+        <CheckCircle className="w-5 h-5 mx-auto" style={{ color: colors.primary }} />
       ) : (
         <Minus className="w-4 h-4 mx-auto opacity-20" />
       )

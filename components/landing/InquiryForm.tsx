@@ -36,7 +36,7 @@ export default function InquiryForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     try {
       // Send form data to info@digi-wire.com
       const response = await fetch('/api/send-inquiry', {
@@ -46,6 +46,7 @@ export default function InquiryForm() {
         },
         body: JSON.stringify({
           to: 'info@digi-wire.com',
+          from: formData.email,
           subject: `New Inquiry from ${formData.name}`,
           text: `
 Name: ${formData.name}
@@ -57,11 +58,11 @@ Message: ${formData.message}
           `.trim(),
         }),
       })
-      
+
       if (response.ok) {
         setIsSubmitted(true)
         setIsSubmitting(false)
-        
+
         // Reset form after 3 seconds
         setTimeout(() => {
           setIsSubmitted(false)
@@ -145,12 +146,12 @@ Message: ${formData.message}
           {/* Sidebar */}
           <motion.div variants={itemVariants} className="lg:col-span-1">
             <div className="p-8 rounded-xl border-0 shadow-xl h-full text-white" style={{ background: `linear-gradient(135deg, ${colors.primary}, ${colors.secondary})` }}>
-                <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
-                <div className="space-y-6">
-                  <ContactItem icon={<Mail />} title="Email" content="info@digi-wire.com" />
-                  <ContactItem icon={<Phone />} title="Phone" content="+91 70672 08833" />
-                  <ContactItem icon={<MessageSquare />} title="Live Chat" content="Mon-Fri, 9AM-6PM IST" />
-                </div>
+              <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
+              <div className="space-y-6">
+                <ContactItem icon={<Mail />} title="Email" content="info@digi-wire.com" />
+                <ContactItem icon={<Phone />} title="Phone" content="+91 70672 08833" />
+                <ContactItem icon={<MessageSquare />} title="Live Chat" content="Mon-Fri, 9AM-6PM IST" />
+              </div>
             </div>
           </motion.div>
 

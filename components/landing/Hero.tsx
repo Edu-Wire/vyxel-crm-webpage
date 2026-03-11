@@ -69,7 +69,7 @@ export default function Hero() {
           <Button 
             className="w-full sm:w-auto h-14 px-8 text-base font-medium rounded-xl shadow-lg hover:shadow-xl transition-all"
             style={{ backgroundColor: colors.primary, color: '#fff' }}
-            onClick={() => window.open('/inquiry', '_self')}
+            onClick={() => window.open('https://play.google.com/store/apps/details?id=com.Vyxel.crm', '_blank')}
           >
             Get Started for Free
           </Button>

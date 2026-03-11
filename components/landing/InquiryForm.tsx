@@ -27,6 +27,7 @@ export default function InquiryForm() {
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -36,6 +37,7 @@ export default function InquiryForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setErrorMessage(null)
 
     try {
       // Send form data to info@digi-wire.com
@@ -59,9 +61,11 @@ Message: ${formData.message}
         }),
       })
 
+      const data = await response.json().catch(() => ({}))
       if (response.ok) {
         setIsSubmitted(true)
         setIsSubmitting(false)
+        setErrorMessage(null)
 
         // Reset form after 3 seconds
         setTimeout(() => {
@@ -76,12 +80,15 @@ Message: ${formData.message}
           })
         }, 3000)
       } else {
-        throw new Error('Failed to send inquiry')
+        const message = data?.message || data?.error || 'Failed to send inquiry'
+        setErrorMessage(message)
+        setIsSubmitting(false)
       }
     } catch (error) {
-      console.error('Error sending inquiry:', error)
+      const message = error instanceof Error ? error.message : 'Network error. Please try again.'
+      setErrorMessage(message)
       setIsSubmitting(false)
-      // You could show an error message here
+      console.error('Error sending inquiry:', error)
     }
   }
 
@@ -183,6 +190,15 @@ Message: ${formData.message}
                       placeholder="Tell us about your needs..."
                     />
                   </div>
+
+                  {errorMessage && (
+                    <div
+                      className="px-4 py-3 rounded-lg text-sm"
+                      style={{ backgroundColor: '#fef2f2', color: '#b91c1c', border: '1px solid #fecaca' }}
+                    >
+                      {errorMessage}
+                    </div>
+                  )}
 
                   <Button
                     type="submit"

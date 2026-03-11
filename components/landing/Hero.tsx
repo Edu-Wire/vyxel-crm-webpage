@@ -69,6 +69,7 @@ export default function Hero() {
           <Button 
             className="w-full sm:w-auto h-14 px-8 text-base font-medium rounded-xl shadow-lg hover:shadow-xl transition-all"
             style={{ backgroundColor: colors.primary, color: '#fff' }}
+            onClick={() => window.open('/inquiry', '_self')}
           >
             Get Started for Free
           </Button>

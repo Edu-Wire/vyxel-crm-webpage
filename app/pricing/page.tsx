@@ -19,44 +19,47 @@ const colors = {
 const pricingPlans = [
   {
     name: 'Starter',
-    description: 'Perfect for individual consultants getting started',
+    description: 'Perfect for small consultancies',
     price: '₹4,999',
     period: '/month',
-    features: ['3 Users', 'Lead Management', 'Student Pipeline', 'Mobile App', 'Email Support'],
+    features: ['3 Users', 'Lead Management', 'Student Pipeline', 'Follow-up Reminders', 'Document Management', 'Mobile App', 'Extra Users @ ₹999/user/month'],
     featured: false
   },
   {
     name: 'Growth',
-    description: 'For rapidly scaling agencies and teams',
-    price: '₹8,999',
+    description: 'For growing agencies',
+    price: '₹9,999',
     period: '/month',
     features: [
-      '8 Users',
+      '10 Users',
+      'Call Logging',
+      'Call Recording',
       'WhatsApp Integration',
-      'Call Logging & Recording',
-      'Performance Dashboard',
-      'Priority Support',
+      'Counselor Dashboards',
+      'Extra Users @ ₹799/user/month'
     ],
     featured: true
   },
   {
     name: 'Elite',
-    description: 'The ultimate powerhouse for large agencies',
-    price: '₹14,999',
+    description: 'For large agencies',
+    price: '₹19,999',
     period: '/month',
     features: [
-      'Unlimited Users',
-      'Finance & Accounts Module', // Added here
+      '25 Users',
       'AI Call Summaries',
-      'Multi Branch Management',
-      'Dedicated Manager',
+      'AI Lead Scoring',
+      'Automation Workflows',
+      'Advanced Analytics',
+      'Multi-branch Support',
+      'Extra Users @ ₹699/user/month'
     ],
     featured: false
   }
 ]
 
 const tableFeatures = [
-  { name: 'Users Included', starter: '3 Users', growth: '8 Users', elite: 'Unlimited' },
+  { name: 'Users Included', starter: '3 Users', growth: '10 Users', elite: '25 Users' },
   { name: 'Lead Management', starter: true, growth: true, elite: true },
   { name: 'Student Pipeline', starter: true, growth: true, elite: true },
   { name: 'Follow-up Reminders', starter: true, growth: true, elite: true },

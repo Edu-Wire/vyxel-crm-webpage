@@ -6,6 +6,9 @@ import { Button } from '@/components/ui/button'
 import { motion, Variants } from 'framer-motion'
 import { CheckCircle2, Crown } from 'lucide-react'
 
+import { useLocation } from '@/hooks/useLocation'
+import { getPlans, type Plan } from '@/lib/pricing'
+
 const colors = {
   primary: '#2779F0',
   secondary: '#2AA8F3',
@@ -16,54 +19,7 @@ const colors = {
   textSecondary: '#4B5563',
 }
 
-interface Plan {
-  name: string
-  price: string
-  period: string
-  desc: string
-  features: string[]
-  featured?: boolean
-}
 
-const plans: Plan[] = [
-  {
-    name: 'Starter',
-    price: '₹4,999',
-    period: '/month',
-    desc: 'Perfect for small consultancies',
-    features: ['3 users included', 'Lead management', 'Student pipeline', 'Follow-up reminders', 'Document management', 'Mobile app', 'Extra users @ ₹999/user/month'],
-  },
-  {
-    name: 'Growth',
-    price: '₹9,999',
-    period: '/month',
-    desc: 'For growing agencies',
-    features: [
-      '10 users included',
-      'Call logging',
-      'Call recording',
-      'WhatsApp integration',
-      'Counselor dashboards',
-      'Extra users @ ₹799/user/month'
-    ],
-    featured: true,
-  },
-  {
-    name: 'Elite',
-    price: '₹19,999',
-    period: '/month',
-    desc: 'For large agencies',
-    features: [
-      '25 users included',
-      'AI call summaries',
-      'AI lead scoring',
-      'Automation workflows',
-      'Advanced analytics',
-      'Multi-branch support',
-      'Extra users @ ₹699/user/month'
-    ],
-  },
-]
 
 // Animation Variants
 const containerVariants: Variants = {
@@ -84,6 +40,9 @@ const itemVariants: Variants = {
 }
 
 export default function Pricing() {
+  const { location, loading } = useLocation()
+  const plans = getPlans(location?.country)
+
   return (
     <section className="relative py-24 md:py-32 overflow-hidden bg-white" id="pricing">
       {/* Grid Pattern Overlay */}
@@ -134,9 +93,9 @@ export default function Pricing() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
+          className={`grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 transition-opacity duration-500 ${loading ? 'opacity-50' : 'opacity-100'}`}
         >
-          {plans.map((plan, i) => (
+          {plans.map((plan: Plan, i: number) => (
             <motion.div key={i} variants={itemVariants} className="h-full">
               <Card 
                 className={`group relative h-full p-8 transition-all duration-500 overflow-hidden rounded-3xl ${
@@ -206,7 +165,7 @@ export default function Pricing() {
 
                   {/* Features */}
                   <ul className="space-y-4 mt-auto">
-                    {plan.features.map((feature, fi) => (
+                    {plan.features.map((feature: string, fi: number) => (
                       <li key={fi} className="flex items-center gap-3">
                         <CheckCircle2 
                           className="w-5 h-5 flex-shrink-0" 

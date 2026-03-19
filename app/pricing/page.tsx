@@ -6,6 +6,9 @@ import Footer from '@/components/landing/Footer'
 import { motion, Variants } from 'framer-motion'
 import { Check, ArrowRight, Star, Minus, CheckCircle } from 'lucide-react'
 
+import { useLocation } from '@/hooks/useLocation'
+import { getPlans } from '@/lib/pricing'
+
 const colors = {
   primary: '#2779F0',
   secondary: '#2AA8F3',
@@ -16,47 +19,6 @@ const colors = {
   textSecondary: '#4B5563',
 }
 
-const pricingPlans = [
-  {
-    name: 'Starter',
-    description: 'Perfect for small consultancies',
-    price: '₹4,999',
-    period: '/month',
-    features: ['3 Users', 'Lead Management', 'Student Pipeline', 'Follow-up Reminders', 'Document Management', 'Mobile App', 'Extra Users @ ₹999/user/month'],
-    featured: false
-  },
-  {
-    name: 'Growth',
-    description: 'For growing agencies',
-    price: '₹9,999',
-    period: '/month',
-    features: [
-      '10 Users',
-      'Call Logging',
-      'Call Recording',
-      'WhatsApp Integration',
-      'Counselor Dashboards',
-      'Extra Users @ ₹799/user/month'
-    ],
-    featured: true
-  },
-  {
-    name: 'Elite',
-    description: 'For large agencies',
-    price: '₹19,999',
-    period: '/month',
-    features: [
-      '25 Users',
-      'AI Call Summaries',
-      'AI Lead Scoring',
-      'Automation Workflows',
-      'Advanced Analytics',
-      'Multi-branch Support',
-      'Extra Users @ ₹699/user/month'
-    ],
-    featured: false
-  }
-]
 
 const tableFeatures = [
   { name: 'Users Included', starter: '3 Users', growth: '10 Users', elite: '25 Users' },
@@ -100,6 +62,9 @@ const itemVariants: Variants = {
 }
 
 export default function PricingPage() {
+  const { location, loading } = useLocation()
+  const pricingPlans = getPlans(location?.country)
+
   const renderTableCell = (val: string | boolean) => {
     if (typeof val === 'boolean') {
       return val ? (
@@ -137,9 +102,9 @@ export default function PricingPage() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid md:grid-cols-3 gap-8 mb-32"
+            className={`grid md:grid-cols-3 gap-8 mb-32 transition-opacity duration-500 ${loading ? 'opacity-50' : 'opacity-100'}`}
           >
-            {pricingPlans.map((plan) => (
+            {pricingPlans.map((plan: any) => (
               <motion.div
                 key={plan.name}
                 variants={itemVariants}
@@ -171,7 +136,7 @@ export default function PricingPage() {
                 </div>
 
                 <div className="space-y-4 mb-10">
-                  {plan.features.map((feature, i) => (
+                  {plan.features.map((feature: string, i: number) => (
                     <div key={i} className="flex items-center gap-3">
                       <div className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-50 flex items-center justify-center">
                         <Check className="w-3 h-3" style={{ color: colors.primary }} />

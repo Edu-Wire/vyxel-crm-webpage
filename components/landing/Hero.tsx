@@ -57,21 +57,21 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6"
         >
-          {/* <Button 
-            variant="outline"
-            className="w-full sm:w-auto h-14 px-8 text-base font-medium rounded-xl border-slate-200 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 group"
-            style={{ color: colors.dark, borderColor: '#B0E2F640' }}
-          >
-            <PlayCircle className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-all duration-300" style={{ color: 'currentColor' }} />
-            <span className="transition-colors duration-300" style={{ color: 'currentColor' }}>See How It Works</span>
-          </Button> */}
-          
           <Button 
             className="w-full sm:w-auto h-14 px-8 text-base font-medium rounded-xl shadow-lg hover:shadow-xl transition-all"
             style={{ backgroundColor: colors.primary, color: '#fff' }}
             onClick={() => window.open('https://play.google.com/store/apps/details?id=com.Vyxel.crm', '_blank')}
           >
             Get Started for Free
+          </Button>
+          
+          <Button 
+            variant="outline"
+            className="w-full sm:w-auto h-14 px-8 text-base font-medium rounded-xl border-slate-200 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 group"
+            style={{ color: colors.dark, borderColor: '#B0E2F640' }}
+          >
+            <PlayCircle className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-all duration-300" style={{ color: 'currentColor' }} />
+            <span className="transition-colors duration-300" style={{ color: 'currentColor' }}>View Insights</span>
           </Button>
         </motion.div>
 

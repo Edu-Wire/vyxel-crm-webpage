@@ -139,7 +139,7 @@ export default function Hero() {
         }`}>
           <video 
             ref={videoRef}
-            src="/Vyxel.mp4" 
+            src="/Vyxel Screen 1.mp4" 
             className="w-full h-full object-cover bg-black"
             controls
             controlsList="nodownload"

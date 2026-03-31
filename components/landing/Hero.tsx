@@ -1,6 +1,9 @@
+'use client'
+
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { PlayCircle } from 'lucide-react'
+import { PlayCircle, X } from 'lucide-react'
+import { useState, useRef } from 'react'
 
 const colors = {
   primary: '#2779F0',
@@ -13,6 +16,9 @@ const colors = {
 }
 
 export default function Hero() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
   return (
     <section className="relative min-h-[85vh] flex flex-col items-center justify-center bg-white px-6">
       <div className="max-w-4xl mx-auto text-center space-y-8 mt-30">
@@ -58,20 +64,30 @@ export default function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6"
         >
           <Button 
+            variant="outline"
+            className="w-full sm:w-auto h-14 px-8 text-base font-medium rounded-xl border-slate-200 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 group"
+            style={{ color: colors.dark, borderColor: '#B0E2F640' }}
+            onClick={() => {
+              setIsVideoOpen(true)
+              if (videoRef.current) {
+                videoRef.current.currentTime = 0
+                videoRef.current.play()
+                if (videoRef.current.requestFullscreen) {
+                  videoRef.current.requestFullscreen().catch(e => console.error("Fullscreen error:", e))
+                }
+              }
+            }}
+          >
+            <PlayCircle className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-all duration-300" style={{ color: 'currentColor' }} />
+            <span className="transition-colors duration-300" style={{ color: 'currentColor' }}>View Insights</span>
+          </Button>
+
+          <Button 
             className="w-full sm:w-auto h-14 px-8 text-base font-medium rounded-xl shadow-lg hover:shadow-xl transition-all"
             style={{ backgroundColor: colors.primary, color: '#fff' }}
             onClick={() => window.open('https://play.google.com/store/apps/details?id=com.Vyxel.crm', '_blank')}
           >
             Get Started for Free
-          </Button>
-          
-          <Button 
-            variant="outline"
-            className="w-full sm:w-auto h-14 px-8 text-base font-medium rounded-xl border-slate-200 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2 group"
-            style={{ color: colors.dark, borderColor: '#B0E2F640' }}
-          >
-            <PlayCircle className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-all duration-300" style={{ color: 'currentColor' }} />
-            <span className="transition-colors duration-300" style={{ color: 'currentColor' }}>View Insights</span>
           </Button>
         </motion.div>
 
@@ -99,6 +115,40 @@ export default function Hero() {
           className="w-full h-auto"
         />
       </motion.div>
+
+      {/* Fullscreen Video Modal (Always rendered to preload, hidden when closed) */}
+      <div 
+        className={`fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm transition-all duration-300 ${
+          isVideoOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        <button 
+          onClick={() => {
+            setIsVideoOpen(false)
+            if (videoRef.current) {
+              videoRef.current.pause()
+            }
+          }}
+          className="absolute top-6 right-6 text-white/70 hover:text-white transition-colors p-2 bg-white/10 hover:bg-white/20 rounded-full"
+        >
+          <X className="w-6 h-6" />
+        </button>
+        
+        <div className={`w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black border border-white/10 transition-transform duration-300 ${
+          isVideoOpen ? 'scale-100' : 'scale-95'
+        }`}>
+          <video 
+            ref={videoRef}
+            src="/Vyxel.mp4" 
+            className="w-full h-full object-cover bg-black"
+            controls
+            controlsList="nodownload"
+            disablePictureInPicture
+            playsInline
+            preload="auto"
+          />
+        </div>
+      </div>
     </section>
   )
 }
